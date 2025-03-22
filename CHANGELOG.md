@@ -2,17 +2,24 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [1.15.9 / 5.70.9] - 2025-03-??
+
+### Fixed
+- fixed the encoding issue with the bullet character in the box delete/remove confirmation dialog [475683e3](https://github.com/sandboxie-plus/Sandboxie/commit/475683e3fada1d97e3a90b4801e6572be3121f9d)
+ [#4591](https://github.com/sandboxie-plus/Sandboxie/issues/4591)
+
+
 ## [1.15.8 / 5.70.8] - 2025-03-12
 
 ### Changed
-- Improve sandbox deletion confirmation prompt (thanks PenXLa) [#4561](https://github.com/sandboxie-plus/Sandboxie/pull/4561)
-- Updated online updater
-- Added ImDisk 3.0 driver to Plus Installer (x64 only)
+- added 'Creation Time' column to snapshot manager (thanks PenXLa) [#4555](https://github.com/sandboxie-plus/Sandboxie/pull/4555)
+- improved sandbox deletion confirmation prompt (thanks PenXLa) [#4561](https://github.com/sandboxie-plus/Sandboxie/pull/4561)
+- updated online updater
+- added [ImDisk 3.0](https://github.com/DavidXanatos/ImDisk/releases/tag/v3.0.0) driver to Sandboxie Plus installer (x64 only)
 
 ### Fixed
-- fixed "WriteFilePath" Seems Work Incorrectly [#4553](https://github.com/sandboxie-plus/Sandboxie/issues/4553)
-- fixed Box Notes deletes matching lines when saved. [#4547](https://github.com/sandboxie-plus/Sandboxie/issues/4547)
-
+- fixed "WriteFilePath" not working correctly [#4553](https://github.com/sandboxie-plus/Sandboxie/issues/4553)
+- fixed an issue where Box Notes deleted matching lines when saved [#4547](https://github.com/sandboxie-plus/Sandboxie/issues/4547)
 
 
 
@@ -31,7 +38,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - fixed potential BSoD issue with driver in low resource conditions
 - fixed a crash in NsiAllocateAndGetTable (thanks tzf-omkey) [#4511](https://github.com/sandboxie-plus/Sandboxie/issues/4511)
 - fixed a memory leak when device change notification is received by a sandboxed process
-- fixed memory leak in NtQueryDirectoryFile hook manifesting in privacy enhanced boxes [#4509](https://github.com/sandboxie-plus/Sandboxie/issues/4509)
+- fixed a memory leak in NtQueryDirectoryFile hook manifesting in privacy enhanced boxes [#4509](https://github.com/sandboxie-plus/Sandboxie/issues/4509)
 
 
 
