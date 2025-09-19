@@ -48,7 +48,7 @@ jobs:
             $resp = Invoke-RestMethod -Method GET -Uri "https://api.github.com/repos/sandboxie-plus/Sandboxie/releases/latest" -Headers @{ "Accept"="application/vnd.github+json" }
             $hasAsset = $false
             foreach ($a in $resp.assets) {
-              if ($a.name -match 'Sandboxie-Plus.*\.exe$') { $hasAsset = $true; break }
+              if ($a.name -match 'Sandboxie-Plus.*.exe$') { $hasAsset = $true; break }
             }
             if ($hasAsset) {
               "ready=true" >> $env:GITHUB_OUTPUT
