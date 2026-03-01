@@ -22,6 +22,10 @@ public:
 	CSbiePlusAPI(QObject* parent);
 	virtual ~CSbiePlusAPI();
 
+	virtual void			UpdateWindowMap();
+
+	virtual QString			GetProcessTitle(quint32 pid) { return m_WindowMap.value(pid); }
+
 	virtual bool			IsRunningAsAdmin();
 
 	virtual bool			IsBusy() const { return m_JobCount > 0; }
@@ -50,6 +54,7 @@ protected:
 	virtual CBoxedProcessPtr OnProcessBoxed(quint32 ProcessId, const QString& Path, const QString& Box, quint32 ParentId, const QString& CmdLine);
 
 	int						m_JobCount;
+	QMultiMap<quint32, QString> m_WindowMap;
 
 	friend class CSandBoxPlus;
 	class CBoxMonitor*		m_BoxMonitor;
