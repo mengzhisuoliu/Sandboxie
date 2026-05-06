@@ -158,10 +158,9 @@ jobs:
             )"
 
             discussions_json="$(
-              jq -c \
-                --argjson existing "$discussions_json" \
-                --argjson page "$page_matches" \
-                '$existing + $page'
+              jq -sc 'add' \
+                <(printf '%s\n' "$discussions_json") \
+                <(printf '%s\n' "$page_matches")
             )"
 
             has_next="$(jq -r '.data.repository.discussions.pageInfo.hasNextPage' <<<"$response")"
