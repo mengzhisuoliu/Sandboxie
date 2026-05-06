@@ -118,8 +118,8 @@ jobs:
           EOF
 
           read -r -d '' LOCK_MUTATION <<'EOF' || true
-          mutation($id: ID!, $reason: LockReason) {
-            lockLockable(input: { lockableId: $id, lockReason: $reason }) {
+          mutation($id: ID!) {
+            lockLockable(input: { lockableId: $id }) {
               lockedRecord {
                 __typename
               }
@@ -265,7 +265,6 @@ jobs:
 
             gh api graphql \
               -f id="$id" \
-              -f reason="RESOLVED" \
               -f query="$LOCK_MUTATION" \
               >/dev/null
 
